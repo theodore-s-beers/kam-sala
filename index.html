@@ -60,7 +60,7 @@
         >. Hopefully this will be an amusement to someone!
       </p>
       <hr />
-      <h2>Plaintext</h2>
+      <h2 id="plaintextHeader">Plaintext</h2>
       <form action="JavaScript:cipher();">
         <input
           class="form-control form-control-lg"
@@ -70,6 +70,7 @@
           autocomplete="off"
           id="plaintext"
           pattern="[\u0600-\u06ff]+(\s+[\u0600-\u06ff]+)*"
+          aria-labelledby="plaintextHeader"
         />
         <button
           type="submit"
@@ -86,7 +87,7 @@
           Reset
         </button>
       </form>
-      <h2 style="margin-top:1.2rem">Ciphertext</h2>
+      <h2 id="ciphertextHeader" style="margin-top:1.2rem">Ciphertext</h2>
       <form>
         <input
           class="form-control form-control-lg"
@@ -96,6 +97,7 @@
           autocomplete="off"
           id="ciphertext"
           readonly="readonly"
+          aria-labelledby="ciphertextHeader"
         />
         <button
           id="copyButton"
