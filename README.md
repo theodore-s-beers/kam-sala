@@ -1,1 +1,1 @@
-# The Kam-sala Cipher
+# The _Kam-sala_ Cipher

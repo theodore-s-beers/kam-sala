@@ -13,6 +13,7 @@ function cipher() {
 
   for (i = 0; i < plaintextFixed.length; i += 1) {
     const currentChar = plaintextFixed.charAt(i);
+
     if (currentChar === "ک" || currentChar === "گ") {
       ciphertext += "م";
     } else if (currentChar === "م") {

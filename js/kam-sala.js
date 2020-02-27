@@ -1,14 +1,19 @@
 function cipher() {
   var plaintext = document.getElementById("plaintext");
+
   if (plaintext.value.length === 0) {
     return;
   }
+
   var plaintextTrimmed = plaintext.value.replace(/\s+/g, " ").trim();
   var plaintextFixed = plaintextTrimmed.replace("لا", "ڸ");
+
   var ciphertext = "";
   var i = 0;
+
   for (i = 0; i < plaintextFixed.length; i += 1) {
     var currentChar = plaintextFixed.charAt(i);
+
     if (currentChar === "ک" || currentChar === "گ") {
       ciphertext += "م";
     } else if (currentChar === "م") {
@@ -74,12 +79,15 @@ function cipher() {
     } else {
     }
   }
+
   var ciphertextField = document.getElementById("ciphertext");
   ciphertextField.value = ciphertext;
 }
+
 function reset() {
   var plaintext = document.getElementById("plaintext");
   var ciphertext = document.getElementById("ciphertext");
+
   plaintext.value = "";
   ciphertext.value = "";
 }

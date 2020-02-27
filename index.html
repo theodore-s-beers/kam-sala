@@ -212,6 +212,7 @@
     </script>
     <script>
       const result = document.getElementById("ciphertext");
+
       function copyResult() {
         if (result.value.length > 0) {
           result.select();
@@ -226,6 +227,7 @@
           $("#copyButton").tooltip("disable");
         }
       }
+
       $("#copyButton").on("click", copyResult);
     </script>
   </body>
