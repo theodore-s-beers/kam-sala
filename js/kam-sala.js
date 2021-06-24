@@ -108,6 +108,15 @@ function reset () {
   ciphertext.value = ''
 }
 
+function submitOnEnter (event) {
+  if (event.key === 'Enter') {
+    event.preventDefault()
+    cipher()
+  }
+}
+
 document.getElementById('submitButton').addEventListener('click', cipher)
 document.getElementById('resetButton').addEventListener('click', reset)
 document.getElementById('copyButton').addEventListener('click', copyResult)
+
+document.getElementById('plaintext').addEventListener('keydown', submitOnEnter)
