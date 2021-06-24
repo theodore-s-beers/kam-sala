@@ -1,0 +1,23 @@
+{
+  "name": "kam-sala",
+  "version": "0.1.0",
+  "description": "An old method for concealing the meaning of text in Persian",
+  "homepage": "https://github.com/theodore-s-beers/kam-sala#readme",
+  "bugs": {
+    "url": "https://github.com/theodore-s-beers/kam-sala/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theodore-s-beers/kam-sala.git"
+  },
+  "license": "MIT",
+  "author": "Theo Beers",
+  "main": "index.html",
+  "scripts": {
+    "standardize": "standard --fix ./js/kam-sala.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "standard": "^16.0.3"
+  }
+}
