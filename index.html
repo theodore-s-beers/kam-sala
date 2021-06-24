@@ -8,39 +8,19 @@
     />
     <meta
       name="description"
-      content="An old method for concealing the meaning of text in
-    Persian"
+      content="An old method for concealing the meaning of text in Persian"
     />
     <link rel="icon" href="#" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Markazi+Text|Noto+Serif:400,400i&display=swap"
       rel="stylesheet"
     />
-    <style>
-      body {
-        font-family: "Noto Serif", serif;
-      }
-      input,
-      .persian {
-        font-family: "Markazi Text", serif !important;
-      }
-      input:read-only {
-        background-color: #fff !important;
-      }
-      input:-moz-read-only {
-        background-color: #fff !important;
-      }
-    </style>
+    <link rel="stylesheet" href="./css/styles.css" />
     <title>The Kam-sala Cipher</title>
   </head>
   <body>
-    <div class="container" style="margin-top:1rem;max-width:74ch">
+    <div class="container">
       <h1>The <em>Kam-sala</em> Cipher</h1>
       <p>
         This was once a fairly common way of concealing the meaning of text in
@@ -66,7 +46,7 @@
       </p>
       <hr />
       <h2 id="plaintextHeader">Plaintext</h2>
-      <form action="JavaScript:cipher();">
+      <form>
         <input
           class="form-control form-control-lg"
           placeholder="اینجا چیزی بنویسید"
@@ -78,21 +58,22 @@
           aria-labelledby="plaintextHeader"
         />
         <button
-          type="submit"
+          type="button"
+          id="submitButton"
           class="btn btn-primary"
-          style="margin-top:1rem;margin-right:1rem"
+          style="margin-top: 1rem; margin-right: 1rem"
         >
           Submit</button
         ><button
           id="resetButton"
           type="button"
           class="btn btn-secondary"
-          style="margin-top:1rem"
+          style="margin-top: 1rem"
         >
           Reset
         </button>
       </form>
-      <h2 id="ciphertextHeader" style="margin-top:1.2rem">Ciphertext</h2>
+      <h2 id="ciphertextHeader" style="margin-top: 1.2rem">Ciphertext</h2>
       <form>
         <input
           class="form-control form-control-lg"
@@ -110,7 +91,7 @@
           class="btn btn-success"
           data-toggle="tooltip"
           data-delay='{"hide":"1000"}'
-          style="margin-top:1rem"
+          style="margin-top: 1rem"
         >
           Copy
         </button>
@@ -121,7 +102,7 @@
         The cipher is applied according to the following mnemonic (a line of
         poetry in the <em>khafif</em> meter):
       </p>
-      <p class="persian" style="font-size:large">
+      <p class="persian" style="font-size: large">
         <span>کم صلا او حط له در سع</span><br /><span
           >حرف منقوط را به جایش دع</span
         >
@@ -154,7 +135,7 @@
       </p>
       <hr />
       <h2>Further reading</h2>
-      <ul class="list-group" style="margin-top:1rem">
+      <ul class="list-group" style="margin-top: 1rem">
         <li class="list-group-item">
           A
           <a
@@ -191,44 +172,9 @@
         >
       </p>
     </div>
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
-    <script src="js/kam-sala.js"></script>
-    <script>
-      $("#resetButton").on("click", reset);
-    </script>
-    <script>
-      const result = document.getElementById("ciphertext");
-
-      function copyResult() {
-        if (result.value.length > 0) {
-          result.select();
-          result.setSelectionRange(0, 99999);
-          document.execCommand("copy");
-          document.getSelection().removeAllRanges();
-          document.getElementById("ciphertext").blur();
-          $("#copyButton").tooltip("enable");
-          $("#copyButton")
-            .attr("data-original-title", "Copied")
-            .tooltip("show");
-          $("#copyButton").tooltip("disable");
-        }
-      }
-
-      $("#copyButton").on("click", copyResult);
-    </script>
+    <script src="./js/jquery-3.4.1.slim.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/kam-sala.js"></script>
   </body>
 </html>

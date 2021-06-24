@@ -84,6 +84,20 @@ function cipher() {
   ciphertextField.value = ciphertext;
 }
 
+function copyResult() {
+  const result = document.getElementById("ciphertext");
+  if (result.value.length > 0) {
+    result.select();
+    result.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+    document.getSelection().removeAllRanges();
+    document.getElementById("ciphertext").blur();
+    $("#copyButton").tooltip("enable");
+    $("#copyButton").attr("data-original-title", "Copied").tooltip("show");
+    $("#copyButton").tooltip("disable");
+  }
+}
+
 function reset() {
   var plaintext = document.getElementById("plaintext");
   var ciphertext = document.getElementById("ciphertext");
@@ -91,3 +105,7 @@ function reset() {
   plaintext.value = "";
   ciphertext.value = "";
 }
+
+document.getElementById("submitButton").addEventListener("click", cipher);
+document.getElementById("resetButton").addEventListener("click", reset);
+document.getElementById("copyButton").addEventListener("click", copyResult);
