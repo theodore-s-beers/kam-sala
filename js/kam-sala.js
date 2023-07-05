@@ -85,38 +85,37 @@ function cipher () {
   ciphertextField.value = ciphertext
 }
 
-function copyResult () {
-  const copyButton = document.getElementById('copy-button')
-  const result = document.getElementById('ciphertext')
-  if (result.value.length > 0) {
-    result.select()
-    result.setSelectionRange(0, 99999)
-    document.execCommand('copy')
-    document.getSelection().removeAllRanges()
-    result.blur()
-    copyButton.tooltip('enable')
-    copyButton.attr('data-original-title', 'Copied').tooltip('show')
-    copyButton.tooltip('disable')
-  }
-}
-
-function reset () {
-  const plaintext = document.getElementById('plaintext')
-  const ciphertext = document.getElementById('ciphertext')
-
-  plaintext.value = ''
-  ciphertext.value = ''
-}
-
-function submitOnEnter (event) {
+// Submit
+document.getElementById('submit-button').addEventListener('click', cipher)
+document.getElementById('plaintext').addEventListener('keydown', (event) => {
   if (event.key === 'Enter') {
     event.preventDefault()
     cipher()
   }
-}
+})
 
-document.getElementById('submit-button').addEventListener('click', cipher)
-document.getElementById('reset-button').addEventListener('click', reset)
-document.getElementById('copy-button').addEventListener('click', copyResult)
+// Copy
+document.getElementById('copy-button').addEventListener('click', async () => {
+  const result = document.getElementById('ciphertext')
 
-document.getElementById('plaintext').addEventListener('keydown', submitOnEnter)
+  if (result.value.length > 0) {
+    try {
+      await navigator.clipboard.writeText(result.value)
+      document.getElementById('checkmark').style.visibility = 'visible'
+    } catch (err) {
+      console.error('Failed to copy: ', err)
+    }
+  }
+})
+
+// Reset
+document.getElementById('reset-button').addEventListener('click', () => {
+  document.getElementById('plaintext').value = ''
+  document.getElementById('ciphertext').value = ''
+  document.getElementById('checkmark').style.visibility = 'hidden'
+})
+
+// Hide checkmark on input change
+document.getElementById('plaintext').addEventListener('input', () => {
+  document.getElementById('checkmark').style.visibility = 'hidden'
+})

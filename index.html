@@ -11,12 +11,12 @@
       content="An old method for concealing the meaning of text in Persian"
     />
     <link rel="icon" href="#" />
-    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Markazi+Text|Noto+Serif:400,400i&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
     <title>The Kam-sala Cipher</title>
   </head>
   <body>
@@ -75,15 +75,17 @@
           readonly="readonly"
           aria-labelledby="ciphertext-header"
         />
-        <button
-          id="copy-button"
-          type="button"
-          class="btn btn-success"
-          data-toggle="tooltip"
-          data-delay='{"hide":"1000"}'
-        >
+        <button id="copy-button" type="button" class="btn btn-success">
           Copy
         </button>
+        <img
+          id="checkmark"
+          src="img/check.svg"
+          alt="checkmark"
+          height="22"
+          width="22"
+          style="margin-left: 0.4em; margin-top: 0.9em; visibility: hidden"
+        />
       </form>
       <hr />
       <h2>Rules</h2>
@@ -161,9 +163,9 @@
         >
       </p>
     </div>
-    <script src="./js/jquery-3.4.1.slim.min.js"></script>
-    <script src="./js/popper.min.js"></script>
-    <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/kam-sala.js"></script>
+    <script src="js/jquery-3.4.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/kam-sala.js"></script>
   </body>
 </html>
