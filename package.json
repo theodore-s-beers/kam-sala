@@ -14,10 +14,15 @@
   "author": "Theo Beers",
   "main": "index.html",
   "scripts": {
+    "format": "prettier --write .",
+    "lint-css": "stylelint '**/*.css'",
     "standardize": "standard --fix ./js/kam-sala.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "standard": "^17.0.0"
+    "prettier": "^2.8.8",
+    "standard": "^17.1.0",
+    "stylelint": "^15.10.0",
+    "stylelint-config-standard": "^34.0.0"
   }
 }
