@@ -11,17 +11,13 @@ input:read-only {
   background-color: #fff !important;
 }
 
-input:-moz-read-only {
-  background-color: #fff !important;
-}
-
 p.persian {
   font-size: large;
 }
 
 ul,
-#copyButton,
-#resetButton {
+#copy-button,
+#reset-button {
   margin-top: 1rem;
 }
 
@@ -30,11 +26,11 @@ ul,
   max-width: 74ch;
 }
 
-#ciphertextHeader {
+#ciphertext-header {
   margin-top: 1.2rem;
 }
 
-#submitButton {
+#submit-button {
   margin-right: 1rem;
   margin-top: 1rem;
 }

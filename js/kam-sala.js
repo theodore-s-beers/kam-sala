@@ -86,7 +86,7 @@ function cipher () {
 }
 
 function copyResult () {
-  const copyButton = document.getElementById('copyButton')
+  const copyButton = document.getElementById('copy-button')
   const result = document.getElementById('ciphertext')
   if (result.value.length > 0) {
     result.select()
@@ -115,8 +115,8 @@ function submitOnEnter (event) {
   }
 }
 
-document.getElementById('submitButton').addEventListener('click', cipher)
-document.getElementById('resetButton').addEventListener('click', reset)
-document.getElementById('copyButton').addEventListener('click', copyResult)
+document.getElementById('submit-button').addEventListener('click', cipher)
+document.getElementById('reset-button').addEventListener('click', reset)
+document.getElementById('copy-button').addEventListener('click', copyResult)
 
 document.getElementById('plaintext').addEventListener('keydown', submitOnEnter)
