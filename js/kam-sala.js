@@ -5,13 +5,14 @@ function cipher () {
     return
   }
 
-  const plaintextTrimmed = plaintext.value.replace(/\s+/g, ' ').trim()
-  const plaintextFixed = plaintextTrimmed.replace('لا', 'ڸ')
+  const plaintextFixed = plaintext.value
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace('لا', 'ڸ')
 
   let ciphertext = ''
-  let i = 0
 
-  for (i = 0; i < plaintextFixed.length; i += 1) {
+  for (let i = 0; i < plaintextFixed.length; i++) {
     const currentChar = plaintextFixed.charAt(i)
 
     if (currentChar === 'ک' || currentChar === 'گ') {
@@ -81,8 +82,7 @@ function cipher () {
     }
   }
 
-  const ciphertextField = document.getElementById('ciphertext')
-  ciphertextField.value = ciphertext
+  document.getElementById('ciphertext').value = ciphertext
 }
 
 // Submit
