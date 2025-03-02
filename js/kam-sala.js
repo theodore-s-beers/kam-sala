@@ -6,8 +6,8 @@ function cipher() {
   }
 
   const plaintextFixed = plaintext.value
-    .replace(/\s+/g, " ")
     .trim()
+    .replace(/\s+/g, " ")
     .replace("لا", "ڸ");
 
   let ciphertext = "";
@@ -15,7 +15,7 @@ function cipher() {
   for (let i = 0; i < plaintextFixed.length; i++) {
     const currentChar = plaintextFixed.charAt(i);
 
-    if (currentChar === "ک" || currentChar === "گ") {
+    if (currentChar === "ک" || currentChar === "ك" || currentChar === "گ") {
       ciphertext += "م";
     } else if (currentChar === "م") {
       ciphertext += "ک";
@@ -25,9 +25,9 @@ function cipher() {
       ciphertext += "ص";
     } else if (
       currentChar === "ا" ||
-      currentChar === "إ" ||
+      currentChar === "آ" ||
       currentChar === "أ" ||
-      currentChar === "آ"
+      currentChar === "إ"
     ) {
       ciphertext += "و";
     } else if (currentChar === "و" || currentChar === "ؤ") {
@@ -51,10 +51,10 @@ function cipher() {
     } else if (
       currentChar === "ی" ||
       currentChar === "ي" ||
-      currentChar === "ى" ||
-      currentChar === "ئ"
+      currentChar === "ئ" ||
+      currentChar === "ى"
     ) {
-      ciphertext += "ی";
+      ciphertext += "ی"; // Normalize to Persian yāʾ; no substitution
     } else if (
       currentChar === "ب" ||
       currentChar === "پ" ||
@@ -74,11 +74,11 @@ function cipher() {
       currentChar === "ق" ||
       currentChar === "ن"
     ) {
-      ciphertext += currentChar;
+      ciphertext += currentChar; // Dotted letters unaffected
     } else if (currentChar === " ") {
-      ciphertext += currentChar;
+      ciphertext += currentChar; // Spaces allowed
     } else {
-      // no-op
+      // no-op; only recognized letters are processed
     }
   }
 
