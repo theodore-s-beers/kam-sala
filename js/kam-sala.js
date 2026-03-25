@@ -1,14 +1,8 @@
 function cipher() {
   const plaintext = document.getElementById("plaintext");
+  if (plaintext.value.length === 0) return;
 
-  if (plaintext.value.length === 0) {
-    return;
-  }
-
-  const plaintextFixed = plaintext.value
-    .trim()
-    .replace(/\s+/g, " ")
-    .replace("لا", "ڸ");
+  const plaintextFixed = plaintext.value.trim().replace(/\s+/g, " ").replace("لا", "ڸ");
 
   let ciphertext = "";
 

@@ -2,10 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width,initial-scale=1,shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
     <meta
       name="description"
       content="An old method for concealing the meaning of text in Persian"
@@ -23,24 +20,19 @@
     <div class="container">
       <h1>The <em>Kam-sala</em> Cipher</h1>
       <p>
-        This was once a fairly common way of concealing the meaning of text in
-        Persian. I first came across discussion of it in Safavid-era sources,
-        but it is also mentioned, in a slightly different form, in the
-        <em>Subh al-a‘sha</em> of al-Qalqashandi (d. 1418 CE). So it’s clear
-        that the history of this cipher goes back at least six centuries, and
-        that it also saw some use in Arabic.
+        This was once a fairly common way of concealing the meaning of text in Persian. I first came
+        across discussion of it in Safavid-era sources, but it is also mentioned, in a slightly
+        different form, in the
+        <em>Subh al-a‘sha</em> of al-Qalqashandi (d. 1418 CE). So it’s clear that the history of
+        this cipher goes back at least six centuries, and that it also saw some use in Arabic.
       </p>
       <p>
-        A <a href="img/shakespear.jpg">concise description</a> of the
-        <em>kam-sala</em> system is given in the Hindustani dictionary of John
-        Shakespear (d. 1858). The rules are also explained below. But enough of
-        this rambling! I put together a simple utility that will apply the
-        cipher to any Persian or Arabic text that you enter. It runs in
-        client-side JavaScript. The source files are available
-        <a
-          href="https://github.com/theodore-s-beers/kam-sala"
-          target="_blank"
-          rel="noopener"
+        A <a href="img/shakespear.jpg">concise description</a> of the <em>kam-sala</em> system is
+        given in the Hindustani dictionary of John Shakespear (d. 1858). The rules are also
+        explained below. But enough of this rambling! I put together a simple utility that will
+        apply the cipher to any Persian or Arabic text that you enter. It runs in client-side
+        JavaScript. The source files are available
+        <a href="https://github.com/theodore-s-beers/kam-sala" target="_blank" rel="noopener"
           >on GitHub</a
         >. Hopefully this will be an amusement to someone!
       </p>
@@ -57,11 +49,8 @@
           pattern="[\u0600-\u06ff]+(\s+[\u0600-\u06ff]+)*"
           aria-labelledby="plaintext-header"
         />
-        <button type="button" id="submit-button" class="btn btn-primary">
-          Submit</button
-        ><button id="reset-button" type="button" class="btn btn-secondary">
-          Reset
-        </button>
+        <button type="button" id="submit-button" class="btn btn-primary">Submit</button
+        ><button id="reset-button" type="button" class="btn btn-secondary">Reset</button>
       </form>
       <h2 id="ciphertext-header">Ciphertext</h2>
       <form>
@@ -75,9 +64,7 @@
           readonly="readonly"
           aria-labelledby="ciphertext-header"
         />
-        <button id="copy-button" type="button" class="btn btn-success">
-          Copy
-        </button>
+        <button id="copy-button" type="button" class="btn btn-success">Copy</button>
         <img
           id="checkmark"
           src="img/check.svg"
@@ -90,33 +77,27 @@
       <hr />
       <h2>Rules</h2>
       <p>
-        The cipher is applied according to the following mnemonic (a line of
-        poetry in the <em>khafif</em> meter):
+        The cipher is applied according to the following mnemonic (a line of poetry in the
+        <em>khafif</em> meter):
       </p>
       <p class="persian">
-        <span>کم صلا او حط له در سع</span><br /><span
-          >حرف منقوط را به جایش دع</span
-        >
+        <span>کم صلا او حط له در سع</span><br /><span>حرف منقوط را به جایش دع</span>
       </p>
       <p>
         The first hemistich lists the letters that should be swapped:
-        <em>kaf</em> for <em>mim</em> (and <em>vice versa</em>);
-        <em>sad</em> for <em>lam alif</em> (this is a unique case where one
-        letter is exchanged for two, and <em>vice versa</em>); <em>alif</em> for
-        <em>waw</em> (and <em>vice versa</em>); <em>etc</em>.
+        <em>kaf</em> for <em>mim</em> (and <em>vice versa</em>); <em>sad</em> for
+        <em>lam alif</em> (this is a unique case where one letter is exchanged for two, and
+        <em>vice versa</em>); <em>alif</em> for <em>waw</em> (and <em>vice versa</em>);
+        <em>etc</em>.
       </p>
-      <p>
-        The second hemistich specifies that letters with dots should be left
-        as-is.
-      </p>
+      <p>The second hemistich specifies that letters with dots should be left as-is.</p>
       <p>
         For example, the word <span class="persian">سلامت</span> would become
         <span class="persian">عصکت</span> in ciphertext.
       </p>
       <p>
-        To decrypt a message, simply run it through the cipher again. It should
-        go without saying that a system this simple will offer little security,
-        except perhaps
+        To decrypt a message, simply run it through the cipher again. It should go without saying
+        that a system this simple will offer little security, except perhaps
         <a
           href="https://en.wikipedia.org/wiki/Security_through_obscurity"
           target="_blank"
@@ -129,15 +110,11 @@
       <ul class="list-group">
         <li class="list-group-item">
           A
-          <a
-            href="https://rpll.ui.ac.ir/article_19305.html"
-            target="_blank"
-            rel="noopener"
+          <a href="https://rpll.ui.ac.ir/article_19305.html" target="_blank" rel="noopener"
             >journal article</a
           >
-          (in Persian) by Muhsin Muhammadi Fasharaki and Maryam Shirani, which
-          reviews a number of historical methods for passing secrets in text,
-          including <em>kam-sala</em>
+          (in Persian) by Muhsin Muhammadi Fasharaki and Maryam Shirani, which reviews a number of
+          historical methods for passing secrets in text, including <em>kam-sala</em>
         </li>
         <li class="list-group-item">
           The
@@ -150,17 +127,14 @@
           on <em>kam-sala</em> in the Dehkhoda dictionary
         </li>
         <li class="list-group-item">
-          Another <a href="img/leitner.png">description</a> of the
-          <em>kam-sala</em> cipher by a European orientalist, in this case
-          Gottlieb Wilhelm Leitner (d. 1899)
+          Another <a href="img/leitner.png">description</a> of the <em>kam-sala</em> cipher by a
+          European orientalist, in this case Gottlieb Wilhelm Leitner (d. 1899)
         </li>
       </ul>
       <hr />
       <p>
         Made with coffee and pedantry by
-        <a href="https://www.theobeers.com/">Theo Beers</a><br /><em
-          >Last updated 2 Mar. 2025</em
-        >
+        <a href="https://www.theobeers.com/">Theo Beers</a><br /><em>Last updated 2 Mar. 2025</em>
       </p>
     </div>
     <script src="js/jquery-3.4.1.slim.min.js"></script>
