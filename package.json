@@ -23,7 +23,7 @@
   "devDependencies": {
     "oxfmt": "^0.66.0",
     "oxlint": "^1.80.0",
-    "stylelint": "^17.14.1",
+    "stylelint": "^17.15.0",
     "stylelint-config-recommended": "^18.0.0"
   }
 }
