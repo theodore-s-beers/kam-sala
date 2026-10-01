@@ -21,7 +21,7 @@
     "test": "echo 'Error: no test specified' && exit 1"
   },
   "devDependencies": {
-    "oxfmt": "^0.66.0",
+    "oxfmt": "^0.70.0",
     "oxlint": "^1.80.0",
     "stylelint": "^17.14.1",
     "stylelint-config-recommended": "^18.0.0"
